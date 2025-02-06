@@ -2,14 +2,14 @@
 
 ## Curso de Sistemas e Mídias Digitais
 
-### Trabalho de AUTORAÇÃO MULTIMÍDIA 2
+### Trabalho de Autoração Multimídia 2
 
 **Equipe:** Cava uma falta  
 **Integrantes:**
 
-- LEVI DE SOUSA ALVES - 552634
-- CARLOS RENAN CARRILHO LOPES JUNIOR - 552292
-- GABRIEL SILVA ALVES DOS SANTOS - 558248
+- Levi de Sousa Alves - 552634
+- Carlos Renan Carrilho Lopes Junior - 552292
+- Gabriel Silva Alves dos Santos - 558248
 
 ---
 
@@ -28,52 +28,112 @@
 
 ## Pergunta 2
 
-- **HTML**:
+### HTML
 
-  - Cada bloco de texto é envolvido por `<div>` para separação visual e semântica.
-  - O arquivo CSS foi separado do HTML usando `<link rel="stylesheet" href="styles.css">`.
+- Cada bloco de texto é envolvido por `<div>` para separação visual e semântica.
+- O arquivo CSS foi separado do HTML usando `<link rel="stylesheet" href="styles.css">`.
 
-- **CSS**:
-  - `.bloco`: Define padding, margem, borda e borda arredondada.
-  - `.bloco1`: Fundo vermelho claro e fonte de 18px.
-  - `.bloco2`: Fundo verde claro e fonte de 20px.
-  - `.bloco3`: Fundo azul claro e fonte de 22px
+### CSS
+
+- `.bloco`: Define padding, margem, borda e borda arredondada.
+- `.bloco1`: Fundo vermelho claro e fonte de 18px.
+- `.bloco2`: Fundo verde claro e fonte de 20px.
+- `.bloco3`: Fundo azul claro e fonte de 22px.
 
 ## Pergunta 3
 
-Usar **padding-top** no conteúdo principal:
+### Usar **padding-top** no conteúdo principal
 
-Vantagens: Simples e direto. Adicionar padding-top no corpo do conteúdo cria um espaçamento suficiente para que o conteúdo não fique escondido atrás da barra fixa. É fácil de ajustar, bastando alterar o valor de padding-top caso a altura da barra de navegação mude.
-Desvantagens: Requer ajuste manual do valor de padding-top se a altura da barra for alterada. Também pode afetar outros elementos na página, principalmente se houver componentes adicionais que não sejam ajustados da mesma forma.
+**Vantagens:**
 
-Usar **position: relative** e \*_z-index_ no conteúdo principal:
+- Simples e direto. Adicionar `padding-top` no corpo do conteúdo cria um espaçamento suficiente para que o conteúdo não fique escondido atrás da barra fixa.
+- Fácil de ajustar, bastando alterar o valor de `padding-top` caso a altura da barra de navegação mude.
 
-Vantagens: Permite um controle maior sobre a sobreposição dos elementos, garantindo que o conteúdo não seja coberto pela barra de navegação. Não afeta o layout interno do conteúdo, apenas ajusta a sua posição visual.
-Desvantagens: Requer uma compreensão mais detalhada do uso de z-index e como ele interage com outros elementos na página. Se houver outros elementos com position: fixed ou absolute, pode ser necessário ajustar o z-index para garantir que tudo fique na camada correta.
+**Desvantagens:**
 
-Ambas as abordagens resolvem o problema de forma eficiente, sendo a escolha entre elas dependente do controle desejado sobre a estrutura da página e a complexidade do layout.
+- Requer ajuste manual do valor de `padding-top` se a altura da barra for alterada.
+- Pode afetar outros elementos na página, principalmente se houver componentes adicionais que não sejam ajustados da mesma forma.
+
+### Usar **position: relative** e **z-index** no conteúdo principal
+
+**Vantagens:**
+
+- Permite um controle maior sobre a sobreposição dos elementos, garantindo que o conteúdo não seja coberto pela barra de navegação.
+- Não afeta o layout interno do conteúdo, apenas ajusta a sua posição visual.
+
+**Desvantagens:**
+
+- Requer uma compreensão mais detalhada do uso de `z-index` e como ele interage com outros elementos na página.
+- Se houver outros elementos com `position: fixed` ou `absolute`, pode ser necessário ajustar o `z-index` para garantir que tudo fique na camada correta.
 
 ## Pergunta 4
 
-Mobile First
-Na abordagem Mobile First, o design é inicialmente criado para dispositivos móveis, usando estilos básicos sem media queries. Em seguida, são aplicadas media queries para dispositivos com telas maiores. A principal vantagem dessa abordagem é a otimização para dispositivos móveis, garantindo que a página carregue rapidamente e funcione bem em telas pequenas. Além disso, as melhorias para dispositivos maiores são adicionadas de forma gradual. No entanto, pode exigir mais cuidado ao modificar o layout à medida que o design se adapta para telas maiores, já que o layout básico foi projetado para telas menores.
+### Mobile First
 
-Desktop First
-Já na abordagem Desktop First, o design começa com os estilos para dispositivos de maior tela, geralmente com layouts mais complexos e detalhados, e depois são adicionadas media queries para ajustar o layout conforme a tela diminui. Essa abordagem é útil quando o foco principal é um layout mais robusto para desktops, mas pode levar a desperdício de recursos para dispositivos móveis, já que regras de estilo complexas para desktops são aplicadas inicialmente, mesmo que não sejam necessárias para telas menores. Além disso, a adaptação para dispositivos menores pode exigir ajustes consideráveis para garantir que a experiência do usuário não seja comprometida.
+Na abordagem Mobile First, o design é inicialmente criado para dispositivos móveis, usando estilos básicos sem media queries. Depois, são aplicadas media queries para dispositivos com telas maiores.
 
-Vantagens e Desvanta gens
-Mobile First:
+**Vantagens:**
 
-Vantagem: O design é otimizado para dispositivos móveis, o que melhora a performance e a experiência do usuário em telas pequenas.
-Desvantagem: Pode exigir mais cuidado ao fazer ajustes para telas maiores, já que o layout básico foi projetado para dispositivos pequenos.
-Desktop First:
+- Otimiza a experiência para dispositivos móveis, garantindo carregamento mais rápido.
+- As melhorias para dispositivos maiores são adicionadas de forma gradual.
 
-Vantagem: Permite criar um layout mais detalhado e robusto para telas grandes.
-Desvantagem: Pode resultar em desperdício de recursos para dispositivos móveis e exigir ajustes consideráveis para telas menores.
-Media Queries
-Quando se utiliza qualquer uma dessas abordagens, é importante garantir que as media queries sejam aplicadas corretamente. No caso do Mobile First, as media queries começam com os estilos básicos para telas pequenas e vão sendo modificadas conforme a tela aumenta. No Desktop First, o processo é invertido: começa-se com o layout para telas grandes e depois ajusta-se para telas menores.
+**Desvantagens:**
 
-Unidades Relativas e Especificidade
-Além disso, ao utilizar valores de largura e altura, é fundamental optar por unidades relativas, como %, vw, vh, ou em, em vez de unidades fixas como px, para garantir um layout mais flexível. Outro ponto a se considerar é a especificidade das regras CSS, para evitar que uma media query mais específica sobrescreva outra de forma indesejada.
+- Pode exigir mais ajustes ao adaptar o layout para telas grandes.
+
+### Desktop First
+
+Na abordagem Desktop First, o design começa com estilos para telas maiores e depois são adicionadas media queries para telas menores.
+
+**Vantagens:**
+
+- Permite criar um layout mais detalhado para desktops.
+
+**Desvantagens:**
+
+- Pode levar ao desperdício de recursos para dispositivos móveis.
+- Requer ajustes consideráveis para garantir uma boa experiência em telas pequenas.
+
+### Media Queries
+
+Em qualquer abordagem, é importante aplicar corretamente as media queries:
+
+- No Mobile First, as media queries são aplicadas conforme a tela aumenta.
+- No Desktop First, as media queries reduzem o layout para dispositivos menores.
+
+### Unidades Relativas e Especificidade
+
+- Utilizar unidades relativas como `%`, `vw`, `vh`, `em` ao invés de `px` para maior flexibilidade.
+- Atenção à especificidade das regras CSS para evitar sobrescritas indesejadas.
 
 ## Pergunta 5
+
+### Importância das Tags Semânticas
+
+Usar tags semânticas no HTML5, como `<header>`, `<nav>`, `<section>` e `<article>`, é essencial para acessibilidade e SEO. Elas estruturam melhor o conteúdo, tornando-o mais compreensível para usuários e motores de busca.
+
+### Acessibilidade
+
+- Facilita a navegação para leitores de tela.
+- Permite atalhos eficientes para o conteúdo principal.
+- Melhora a experiência do usuário.
+
+### SEO (Search Engine Optimization)
+
+- Ajuda motores de busca a indexarem melhor a página.
+- Indica a hierarquia do conteúdo ao Google.
+- Melhora o ranqueamento em pesquisas.
+
+### Como validar acessibilidade e SEO?
+
+#### Testes de Acessibilidade
+
+- Utilizar o Lighthouse (Chrome DevTools).
+- Testar com a ferramenta WAVE (WCAG).
+- Verificar navegação só pelo teclado.
+
+#### Validação de SEO
+
+- Utilizar o Google Search Console.
+- Testar com Screaming Frog SEO Spider.
+- Usar meta tags e cabeçalhos bem estruturados.
