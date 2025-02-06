@@ -1,0 +1,18 @@
+.bloco {
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+.bloco1 {
+    background-color: #ffdddd;
+    font-size: 18px;
+}
+.bloco2 {
+    background-color: #ddffdd;
+    font-size: 20px;
+}
+.bloco3 {
+    background-color: rgb(167, 232, 243);
+    font-size: 22px;
+}

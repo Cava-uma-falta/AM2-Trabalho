@@ -1,0 +1,46 @@
+/* Estilos padrão para dispositivos grandes (desktop) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: darkblue;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Media query para telas menores que 1024px (tablets e abaixo) */
+@media (max-width: 1024px) {
+    header {
+        background-color: lightblue;
+    }
+
+    .container {
+        display: block;
+        padding: 15px;
+    }
+}
+
+/* Media query para telas menores que 600px (smartphones) */
+@media (max-width: 600px) {
+    header {
+        background-color: lightgreen;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}

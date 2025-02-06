@@ -1,0 +1,37 @@
+/* Estilos padrão para dispositivos móveis */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: lightblue;
+    padding: 10px;
+    text-align: center;
+}
+
+.container {
+    display: block;
+    padding: 15px;
+}
+
+/* Media query para dispositivos com telas maiores que 600px (tablets e desktops) */
+@media (min-width: 600px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        background-color: darkblue;
+        color: white;
+    }
+
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}
