@@ -150,7 +150,7 @@ Usar tags semânticas no HTML5, como `<header>`, `<nav>`, `<section>` e `<articl
 
 ### Interação de Mouse com um dropdown
 
- - "O código cria um **menu dropdown** que funciona no computador e no celular. O submenu fica escondido por padrão e aparece quando o usuário passa o mouse em cima (graças aos eventos `mouseenter` e `mouseleave`) ou toca na tela, no caso do celular (usando o evento `touchstart`). O `event.preventDefault()` impede ações padrão do toque, como rolagem indesejada. O CSS controla a aparência e o JavaScript ativa ou desativa o submenu com classes (`hover` e `active`)."
+ - O código cria um **menu dropdown** que funciona no computador e no celular. O submenu fica escondido por padrão e aparece quando o usuário passa o mouse em cima (graças aos eventos `mouseenter` e `mouseleave`) ou toca na tela, no caso do celular (usando o evento `touchstart`). O `event.preventDefault()` impede ações padrão do toque, como rolagem indesejada. O CSS controla a aparência e o JavaScript ativa ou desativa o submenu com classes (`hover` e `active`).
 
  - O código está presente na pasta "questão 12"
 
