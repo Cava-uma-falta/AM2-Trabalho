@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exemplo de página acessível e otimizada para SEO com HTML5 semântico">
+    <title>Minha Página Inicial</title>
+    <link rel="stylesheet" href="7pergunta.css">
+</head>
+<body>
+    <header>
+        <h1>Minha Página Inicial</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#artigos">Artigos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="sobre" class="bloco bloco1">
+            <h2>Sobre Nós</h2>
+            <p>Somos um site focado em acessibilidade e boas práticas na web.</p>
+            <!-- Botão "Olá, mundo!" movido para cá -->
+            <button id="meuBotao">Clique aqui!</button>
+        </section>
+
+        <section id="artigos" class="bloco bloco2">
+            <h2>Últimos Artigos</h2>
+            <article>
+                <h3>Como Melhorar a Acessibilidade</h3>
+                <p>Entenda como utilizar HTML semântico para tornar seu site mais acessível.</p>
+            </article>
+        </section>
+
+        <section id="contato" class="bloco bloco3">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco para mais informações.</p>
+            
+            <!-- Formulário adicionado aqui -->
+            <form id="formContato">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                    <span class="erro" id="erroNome"></span>
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+                    <span class="erro" id="erroEmail"></span>
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem"></textarea>
+                    <span class="erro" id="erroMensagem"></span>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Site Acessível</p>
+        <a href="https://solar.virtual.ufc.br/" target="_blank">Solar</a>
+    </footer>
+
+    <!-- JavaScript adicionado aqui -->
+    <script>
+        // Código para o botão "Olá, mundo!"
+        const botao = document.getElementById('meuBotao');
+        botao.addEventListener('click', function() {
+            alert('Olá, mundo!');
+        });
+
+        // Código para validação do formulário
+        const form = document.getElementById('formContato');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            limparErros();
+
+            const nomeValido = validarCampo('nome', 'Por favor, insira seu nome.');
+            const emailValido = validarEmail('email', 'Por favor, insira um e-mail válido.');
+            const mensagemValida = validarCampo('mensagem', 'Por favor, insira uma mensagem.');
+
+            if (nomeValido && emailValido && mensagemValida) {
+                alert('Formulário enviado com sucesso!');
+                form.reset();
+            }
+        });
+
+        function validarCampo(campoId, mensagemErro) {
+            const campo = document.getElementById(campoId);
+            const valor = campo.value.trim();
+
+            if (valor === '') {
+                exibirErro(campoId, mensagemErro);
+                return false;
+            }
+            return true;
+        }
+
+        function validarEmail(campoId, mensagemErro) {
+            const campo = document.getElementById(campoId);
+            const valor = campo.value.trim();
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (valor === '' || !regexEmail.test(valor)) {
+                exibirErro(campoId, mensagemErro);
+                return false;
+            }
+            return true;
+        }
+
+        function exibirErro(campoId, mensagemErro) {
+            const erroSpan = document.getElementById(`erro${campoId.charAt(0).toUpperCase() + campoId.slice(1)}`);
+            erroSpan.textContent = mensagemErro;
+        }
+
+        function limparErros() {
+            const erros = document.querySelectorAll('.erro');
+            erros.forEach(erro => erro.textContent = '');
+        }
+    </script>
+</body>
+</html>
