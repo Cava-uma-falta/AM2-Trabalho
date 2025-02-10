@@ -153,7 +153,7 @@ Usar tags semânticas no HTML5, como `<header>`, `<nav>`, `<section>` e `<articl
 ### Exibição dos Dados no DOM
 
  - Com os dados em JSON, usamos o DOM para exibir as informações. Isso pode ser feito com document.querySelector ou getElementById para selecionar onde o conteúdo será exibido.
- - Se os dados forem uma lista, usamos forEach para criar dinamicamente elementos (como <li> ou <div>) e adicioná-los ao HTML.
+ - Se os dados forem uma lista, usamos forEach para criar dinamicamente elementos (como li ou div) e adicioná-los ao HTML.
 
 ### Tratamento de Erros
 
