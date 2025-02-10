@@ -138,6 +138,22 @@ Usar tags semânticas no HTML5, como `<header>`, `<nav>`, `<section>` e `<articl
 - Testar com Screaming Frog SEO Spider.
 - Usar meta tags e cabeçalhos bem estruturados.
 
+## Pergunta 11
+
+### Descreva o uso de setInterval para atualizar esse valor a cada segundo.
+
+ - O `setInterval(updateTime, 1000)` serve para **chamar a função `updateTime` automaticamente a cada 1 segundo (1000 milissegundos)**. Isso faz com que a data e hora sejam atualizadas em tempo real, sem precisar recarregar a página.  
+
+ - Ou seja, o `setInterval` cria um **ciclo contínuo** onde a função roda de novo a cada segundo, pegando o horário atual e exibindo no `<span>`. Isso é o que faz o relógio ficar sempre atualizado.
+
+## Pergunta 12
+
+### Interação de Mouse com um dropdown
+
+ - "O código cria um **menu dropdown** que funciona no computador e no celular. O submenu fica escondido por padrão e aparece quando o usuário passa o mouse em cima (graças aos eventos `mouseenter` e `mouseleave`) ou toca na tela, no caso do celular (usando o evento `touchstart`). O `event.preventDefault()` impede ações padrão do toque, como rolagem indesejada. O CSS controla a aparência e o JavaScript ativa ou desativa o submenu com classes (`hover` e `active`)."
+
+ - O código está presente na pasta "questão 12"
+
 ## Pergunta 13
 
 ### Consumo da API (fetch)
