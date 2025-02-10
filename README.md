@@ -137,3 +137,21 @@ Usar tags semânticas no HTML5, como `<header>`, `<nav>`, `<section>` e `<articl
 - Utilizar o Google Search Console.
 - Testar com Screaming Frog SEO Spider.
 - Usar meta tags e cabeçalhos bem estruturados.
+
+## Pergunta 15
+
+### Cachear Arquivos Estáticos (HTML, CSS, JS, Imagens)
+
+O Service Worker é uma tecnologia que funciona como um "assistente" entre o navegador e a internet. Ele permite que o site continue funcionando mesmo quando o usuário estiver sem conexão. Para isso, o Service Worker armazena (ou cacheia) arquivos importantes, como páginas HTML, folhas de estilo (CSS), scripts (JS) e imagens.
+
+Esse armazenamento acontece quando o Service Worker é instalado no site. A partir daí, sempre que o usuário abrir o aplicativo, o navegador verifica se esses arquivos já estão guardados. Se estiverem, eles são carregados diretamente do cache, o que torna o acesso mais rápido e eficiente, mesmo sem internet.
+
+### Oferecer uma Experiência Offline Básica
+Com os arquivos armazenados, o Service Worker pode oferecer uma experiência básica de uso mesmo quando o usuário estiver offline. Isso significa que, ao tentar acessar o app sem conexão, o navegador não precisa buscar as informações na internet, pois já possui uma cópia salva.
+
+Se o usuário tentar acessar algo que não está no cache e não houver conexão, o Service Worker pode exibir uma página personalizada informando que o conteúdo não está disponível no momento. Isso é melhor do que simplesmente mostrar uma mensagem de erro, pois mantém uma experiência de uso mais amigável.
+
+### Atualizar o Cache Quando Houver Nova Versão dos Arquivos
+Quando o aplicativo recebe atualizações, como mudanças no design ou novas funcionalidades, é importante que o usuário veja a versão mais recente. O Service Worker faz isso automaticamente, verificando se existem novas versões dos arquivos que estão no cache.
+
+Se ele encontrar arquivos atualizados, ele apaga a versão antiga e salva a nova. Esse processo garante que, na próxima vez que o usuário abrir o app, ele verá o conteúdo mais atual, sem precisar limpar o cache do navegador manualmente.

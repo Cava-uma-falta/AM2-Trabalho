@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 14</title>
+  <style>
+    /* Estilos básicos */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    h2 {
+      color: #555;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f1f1;
+    }
+
+    .example {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+    }
+
+    .example h3 {
+      margin-top: 0;
+    }
+
+    .example input {
+      padding: 8px;
+      width: 300px;
+      margin-right: 10px;
+    }
+
+    .example button {
+      margin: 5px;
+      padding: 8px 12px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .example button:hover {
+      background-color: #0056b3;
+    }
+
+    #storage-output {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Questão 14: Comparação entre localStorage, sessionStorage e IndexedDB</h1>
+
+  <h2>Diferenças Principais</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Característica</th>
+        <th>localStorage</th>
+        <th>sessionStorage</th>
+        <th>IndexedDB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Volume de Dados</td>
+        <td>~5MB</td>
+        <td>~5MB</td>
+        <td>~50MB ou mais</td>
+      </tr>
+      <tr>
+        <td>Formato de Armazenamento</td>
+        <td>Chave/Valor (strings)</td>
+        <td>Chave/Valor (strings)</td>
+        <td>Banco de dados NoSQL (objetos estruturados)</td>
+      </tr>
+      <tr>
+        <td>Persistência</td>
+        <td>Persistente (até ser explicitamente apagado)</td>
+        <td>Por sessão (dados são apagados ao fechar a aba/navegador)</td>
+        <td>Persistente</td>
+      </tr>
+      <tr>
+        <td>Casos de Uso</td>
+        <td>Dados simples (tokens, preferências)</td>
+        <td>Dados temporários (dados de formulário durante a navegação)</td>
+        <td>Dados complexos e volumosos (listas, arquivos)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="example">
+    <h3>Teste localStorage e sessionStorage</h3>
+    <input type="text" id="input-data" placeholder="Digite algo para salvar...">
+    <button onclick="saveToLocalStorage()">Salvar no localStorage</button>
+    <button onclick="saveToSessionStorage()">Salvar no sessionStorage</button>
+    <button onclick="clearStorage()">Limpar Tudo</button>
+    <div id="storage-output">
+      <!-- Aqui serão exibidos os dados salvos -->
+    </div>
+  </div>
+
+  <script>
+    // Função para salvar no localStorage
+    function saveToLocalStorage() {
+      const inputData = document.getElementById('input-data').value;
+      if (inputData) {
+        localStorage.setItem('savedData', inputData);
+        updateOutput();
+      } else {
+        alert('Digite algo para salvar!');
+      }
+    }
+
+    // Função para salvar no sessionStorage
+    function saveToSessionStorage() {
+      const inputData = document.getElementById('input-data').value;
+      if (inputData) {
+        sessionStorage.setItem('savedData', inputData);
+        updateOutput();
+      } else {
+        alert('Digite algo para salvar!');
+      }
+    }
+
+    // Função para limpar tudo
+    function clearStorage() {
+      localStorage.removeItem('savedData');
+      sessionStorage.removeItem('savedData');
+      updateOutput();
+    }
+
+    // Função para exibir os dados salvos na página
+    function updateOutput() {
+      const output = document.getElementById('storage-output');
+      const localStorageData = localStorage.getItem('savedData');
+      const sessionStorageData = sessionStorage.getItem('savedData');
+
+      output.innerHTML = `
+        <h4>Dados Salvos:</h4>
+        <strong>localStorage:</strong> ${localStorageData || 'Nenhum dado'}<br>
+        <strong>sessionStorage:</strong> ${sessionStorageData || 'Nenhum dado'}
+      `;
+    }
+
+    // Atualiza a exibição ao carregar a página
+    updateOutput();
+  </script>
+
+</body>
+</html>

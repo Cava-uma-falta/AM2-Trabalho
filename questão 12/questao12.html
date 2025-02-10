@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 12</title>
+  <style>
+    /* Estilos básicos */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 150px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown.hover .submenu,
+    .dropdown.active .submenu {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dropdown -->
+  <div class="dropdown">
+    Menu Principal
+    <div class="submenu">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </div>
+  </div>
+
+  <script>
+    // Seleciona o dropdown
+    const dropdown = document.querySelector('.dropdown');
+
+    // Eventos para mouse
+    dropdown.addEventListener('mouseenter', () => {
+      dropdown.classList.add('hover');
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      dropdown.classList.remove('hover');
+    });
+
+    // Evento para touch
+    dropdown.addEventListener('touchstart', (event) => {
+      event.preventDefault(); // Evita comportamentos padrão do touch
+      dropdown.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

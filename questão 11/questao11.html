@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 11</title>
+</head>
+<body>
+
+    <span id="current-time"></span>
+
+    <script>
+      function updateTime() {
+        const now = new Date(); // Pega a data e hora atual
+        const timeString = now.toLocaleTimeString(); // Formata bonitinho
+        document.getElementById('current-time').textContent = timeString; // Joga no span
+      }
+    
+      setInterval(updateTime, 1000); // Atualiza a cada 1 segundo
+      updateTime(); // Mostra a hora logo de cara
+    </script>
+    
+</body>
+</html>
