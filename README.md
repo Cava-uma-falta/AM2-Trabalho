@@ -138,6 +138,30 @@ Usar tags semânticas no HTML5, como `<header>`, `<nav>`, `<section>` e `<articl
 - Testar com Screaming Frog SEO Spider.
 - Usar meta tags e cabeçalhos bem estruturados.
 
+## Pergunta 13
+
+### Consumo da API (fetch)
+
+ - A lógica começa com o uso do fetch(url) para fazer a requisição dos dados da API. É ideal criar uma função específica para isso, como buscarDados(), facilitando a reutilização e a organização do código.
+ - Exemplo de lógica: chamar essa função ao carregar a página ou em eventos específicos (como um clique).
+
+### Tratamento da Resposta (JSON)
+
+ - Após o fetch, usamos .then(response => response.json()) para converter a resposta em JSON. Antes disso, é importante verificar se a resposta foi bem-sucedida com response.ok. Isso evita tentar processar respostas com erros (como 404 ou 500).
+ - Se o response.ok for false, podemos lançar um erro personalizado para tratar depois.
+
+### Exibição dos Dados no DOM
+
+ - Com os dados em JSON, usamos o DOM para exibir as informações. Isso pode ser feito com document.querySelector ou getElementById para selecionar onde o conteúdo será exibido.
+ - Se os dados forem uma lista, usamos forEach para criar dinamicamente elementos (como <li> ou <div>) e adicioná-los ao HTML.
+
+### Tratamento de Erros
+
+Erros podem acontecer por problemas de rede ou no formato dos dados. Para isso:
+
+ - Erros de rede: usamos .catch() ou try...catch (em funções async/await) para capturar falhas na conexão.
+ - Erros de parsing: verificamos se o JSON está correto e, se falhar, mostramos uma mensagem de erro amigável para o usuário, como “Falha ao carregar dados. Tente novamente mais tarde.”
+
 ## Pergunta 14
 
 ### Volume de Dados Suportado
