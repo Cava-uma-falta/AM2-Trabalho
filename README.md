@@ -138,6 +138,81 @@ Usar tags semânticas no HTML5, como `<header>`, `<nav>`, `<section>` e `<articl
 - Testar com Screaming Frog SEO Spider.
 - Usar meta tags e cabeçalhos bem estruturados.
 
+
+## Pergunta 6
+
+### Você quer adicionar um botão na página que, quando clicado, exibe um alerta (alert box) no navegador.
+
+- HTML:
+
+- O botão é criado com a tag <button> e recebe um ID (meuBotao) para que possamos identificá-lo no JavaScript.
+
+- JavaScript:
+
+- Usamos document.getElementById('meuBotao') para selecionar o botão pelo ID.
+
+- Em seguida, adicionamos um "ouvinte" de evento (addEventListener) que fica "escutando" o evento de clique (click).
+
+- Quando o botão é clicado, a função dentro do addEventListener é executada, exibindo o alerta com a mensagem "Olá, mundo!".
+
+## Pergunta 7
+
+### Seu site possui um formulário com campos de nome, e-mail e mensagem. Você deseja validar esses campos antes de enviar os dados para o servidor, exibindo mensagens de erro embaixo de cada campo, caso estejam vazios ou preenchidos de forma incorreta.
+
+## Pergunta 8
+
+### Explique como você gerenciaria a inserção de componentes ou seções da página usando JavaScript, garantindo que o conteúdo seja carregado corretamente e que eventuais eventos ou scripts associados às novas seções sejam configurados adequadamente.
+
+- Para gerenciar a inserção de componentes ou seções de uma página em uma aplicação Single Page, você pode seguir estas etapas:
+
+- Carregamento Dinâmico: Substitua o conteúdo da página de forma dinâmica, alterando o innerHTML do elemento contêiner, sem recarregar a página inteira.
+
+- Manutenção de Estado: Após a mudança de conteúdo, reconfigure os eventos (como cliques ou formulários) associados aos novos elementos, pois o uso de innerHTML remove os eventos - antigos.
+
+- Uso de Funções Reutilizáveis: Crie funções para lidar com o carregamento e reconfiguração de seções específicas, garantindo que cada nova seção carregue o conteúdo correto e reative os eventos associados.
+
+- Melhorias no Fluxo: Sempre limpe erros ou eventos anteriores e garanta que o estado da página esteja consistente após a inserção de novas seções.
+
+- Com esse processo, o conteúdo é carregado e os scripts ou eventos necessários para cada seção são aplicados corretamente.
+
+## Pergunta 9
+
+### Descreva como funcionam as principais funções do History API (e.g., pushState, replaceState, popstate) e como você as utilizaria para criar um sistema de rotas simples. Cite as precauções de compatibilidade com navegadores antigos e eventuais fallback strategies.
+
+- Explicação sobre o History API e Navegação SPA
+ 
+ - pushState(state, title, url): Adiciona um novo estado ao histórico do navegador sem recarregar a página.
+- replaceState(state, title, url): Substitui o estado atual no histórico sem criar um novo.
+ - popstate: Ocorre quando o usuário navega pelo histórico do navegador (botões voltar/avançar).
+ - Compatibilidade: Funciona na maioria dos navegadores modernos, mas um fallback comum é usar `location.hash` para manipular URLs em navegadores antigos.
+ ## Pergunta 10
+
+ ### Quais técnicas você pode empregar para melhorar o desempenho de carregamento, considerando a divisão de código (code splitting), lazy loading e uso de módulos JavaScript nativos? Explique como essas técnicas funcionam em conjunto para reduzir o tempo de carregamento inicial e aumentar a performance geral.
+
+1. Divisão de Código (Code Splitting)
+- A divisão de código é uma técnica onde o código JavaScript é quebrado em múltiplos pacotes, ou "chunks", que são carregados sob demanda, em vez de carregar todo o código de uma vez durante o carregamento inicial da página.
+
+- Como funciona: Em vez de carregar um único arquivo de script grande, você divide o código em partes menores, geralmente com base nos diferentes módulos da aplicação. O Webpack (ou outra ferramenta de bundling) é frequentemente usado para realizar essa divisão automaticamente.
+Exemplo prático: Ao usar a divisão de código, você pode separar o código da interface do usuário do código do backend ou de funcionalidades específicas, carregando somente o código necessário para cada seção da aplicação conforme o usuário navega.
+2. Lazy Loading
+Lazy loading é a técnica de adiar o carregamento de módulos JavaScript até o momento em que realmente sejam necessários, ou seja, o código só é carregado quando o usuário interage com a parte da aplicação que exige aquele módulo.
+
+- Como funciona: Ao usar lazy loading, você pode, por exemplo, carregar certos componentes da UI ou módulos JavaScript apenas quando o usuário chega a uma determinada página ou interage com um botão específico. Isso ajuda a reduzir a quantidade de código carregado na inicialização.
+Integração com code splitting: A combinação de code splitting e lazy loading é poderosa. Você pode dividir a aplicação em chunks menores e, dentro desses chunks, carregar os módulos de forma "preguiçosa" (lazy), carregando-os apenas quando necessários, sem sobrecarregar o carregamento inicial.
+3. Uso de Módulos JavaScript Nativos
+Os módulos JavaScript nativos permitem que você use a funcionalidade de módulos diretamente no navegador, sem precisar de ferramentas de bundling como Webpack ou Babel.
+
+- Como funciona: Ao usar módulos nativos (ES Modules - ESM), você pode estruturar o código JavaScript em pequenos arquivos separados e importar/exportar funcionalidades entre eles. O navegador faz o trabalho de carregar e executar esses módulos conforme necessário, sem a necessidade de incluir tudo no mesmo arquivo de script.
+Exemplo prático: Ao usar import e export, você pode fazer com que diferentes módulos sejam carregados de forma independente, permitindo ao navegador carregar e executar apenas o necessário de cada módulo na ordem correta.
+- Como essas técnicas trabalham juntas:
+Redução do código inicial: A combinação de code splitting e lazy loading permite que a SPA carregue apenas o código necessário para a página ou módulo inicial. Isso reduz o tempo de carregamento inicial da aplicação, uma vez que você não está forçando o carregamento de tudo ao mesmo tempo.
+
+- Melhoria na performance do navegador: O uso de módulos nativos permite que o navegador lide com o carregamento dos módulos de forma eficiente. Ele pode carregar, armazenar em cache e reutilizar os módulos de maneira mais otimizada, sem sobrecarregar a memória ou o processamento.
+
+- Redução do tráfego de rede: Com a divisão de código e lazy loading, você está carregando apenas os chunks de código necessários no momento exato da navegação do usuário, evitando o download de scripts que não são imediatamente necessários. Isso reduz o uso de banda e melhora a experiência do usuário, especialmente em conexões mais lentas.
+
+- Em resumo, essas técnicas — divisão de código, lazy loading e módulos nativos — se combinam para reduzir o tempo de carregamento inicial, diminuir a quantidade de código que precisa ser baixada e executada de uma vez, e otimizar o desempenho geral da aplicação. Isso resulta em uma experiência mais rápida e fluida para o usuário.
+
 ## Pergunta 11
 
 ### Descreva o uso de setInterval para atualizar esse valor a cada segundo.
