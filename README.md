@@ -158,6 +158,13 @@ Usar tags semânticas no HTML5, como `<header>`, `<nav>`, `<section>` e `<articl
 ## Pergunta 7
 
 ### Seu site possui um formulário com campos de nome, e-mail e mensagem. Você deseja validar esses campos antes de enviar os dados para o servidor, exibindo mensagens de erro embaixo de cada campo, caso estejam vazios ou preenchidos de forma incorreta.
+- Para implementar uma validação de formulário com JavaScript, você pode usar a manipulação de DOM e eventos da seguinte maneira:
+
+- Manipulação de DOM: Primeiro, você acessa os elementos do formulário, como campos de texto, botões e mensagens de erro, usando funções como document.getElementById().
+
+- Eventos: Você adiciona um ouvinte de evento (addEventListener) ao formulário ou ao botão de envio, para interceptar a ação de envio e realizar a validação antes de permitir que o formulário seja enviado.
+
+- Validação: A validação verifica se os campos do formulário estão preenchidos corretamente. Caso algum campo seja inválido (por exemplo, vazio), você exibe uma mensagem de erro e impede o envio do formulário, usando métodos como event.preventDefault().
 
 ## Pergunta 8
 
