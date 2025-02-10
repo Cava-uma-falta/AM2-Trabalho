@@ -138,6 +138,30 @@ Usar tags semânticas no HTML5, como `<header>`, `<nav>`, `<section>` e `<articl
 - Testar com Screaming Frog SEO Spider.
 - Usar meta tags e cabeçalhos bem estruturados.
 
+## Pergunta 14
+
+### Volume de Dados Suportado
+
+ - localStorage / sessionStorage: Limitados (5–10 MB).
+ - IndexedDB: Suporta grandes volumes (centenas de MB).
+
+### Forma de Armazenamento
+
+- localStorage / sessionStorage: Simples, formato chave/valor.
+- IndexedDB: Estruturado, tipo banco NoSQL, aceita objetos complexos.
+
+### Persistência
+
+- localStorage: Dados permanentes até serem apagados.
+- sessionStorage: Dura apenas enquanto a aba está aberta.
+- IndexedDB: Dados permanentes, como o localStorage.
+
+### Possíveis Casos de Uso
+
+- localStorage: Preferências do usuário (tema, idioma).
+- sessionStorage: Dados temporários (sessões de login, formulários).
+- IndexedDB: Apps complexos (dados offline, listas grandes, jogos).
+
 ## Pergunta 15
 
 ### Cachear Arquivos Estáticos (HTML, CSS, JS, Imagens)
